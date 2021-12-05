@@ -5,9 +5,7 @@ body, html {
     font-family: Helvetica, sans-serif;
 }
 
-p {
-    margin: 0;
-}
+p { margin: 0 }
 
 .container {
     display: flex;
@@ -19,16 +17,12 @@ p {
 .sidebar {
     display: flex;
     flex-direction: column;
-    /*align-content: center;*/
     margin: 12px;
     border-radius: 12px;
     background: #3a5336;
 }
 
-.expanded {
-
-}
-
+.expanded {}
 .collapsed {}
 
 #hamburger {
@@ -48,9 +42,7 @@ p {
     border-radius: 3px;
 }
 
-.icon {
-
-}
+.icon {}
 
 .links {
     position: relative;
@@ -72,7 +64,6 @@ p {
 
 .link-text {
     margin: 0 8px;
-    color: white;
     font-weight: bold;
 }
 
@@ -83,4 +74,46 @@ p {
 .hovered {
     border-radius: 6px;
     background: goldenrod;
+    color: #3a5336;
+}
+
+@media(max-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .content {
+        order: 1;
+        flex: 1;
+    }
+    .sidebar {
+        flex-direction: row;
+        /*align-content: stretch;*/
+        order: 2;
+    }
+    .links {
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 1;
+        top: 0;
+        text-align: center;
+        margin: 8px;
+    }
+    .link {
+        margin-bottom: 0;
+        flex-direction: column;
+        align-items: stretch;
+        font-weight: lighter;
+    }
+    #hamburger {
+        display: none;
+    }
+    /*.hidden {*/
+    /*    display: flex;*/
+    /*}*/
+    .link-text {
+        margin: 4px 0 0 0;
+        font-weight: lighter;
+    }
+
 }
