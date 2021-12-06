@@ -45,6 +45,24 @@ const toggleMenu = () => {
       link.className = 'link-text hidden';
     }
   }
+
+  const linkSection = document.querySelector('.links');
+  const sidebarContents = document.querySelector('.sidebar-contents');
+  const lines = document.getElementsByClassName('line');
+  if (linkSection.className.includes('hidden-mobile')) {
+    linkSection.className = 'links';
+    sidebarContents.className =  'sidebar-contents sidebar-contents-selected';
+    for (let line of lines) {
+      line.className = 'line line-selected';
+    }
+  } else {
+    linkSection.className = 'links hidden-mobile';
+    sidebarContents.className =  'sidebar-contents';
+    for (let line of lines) {
+      line.className = 'line';
+    }
+
+  }
 }
 
 const addHoverStyles = (link) => link.className = 'link hovered';

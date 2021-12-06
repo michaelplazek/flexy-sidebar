@@ -15,15 +15,20 @@ p { margin: 0 }
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
     margin: 12px;
     border-radius: 12px;
     background: #3a5336;
 }
 
-.expanded {}
-.collapsed {}
+.sidebar-contents {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+/*.expanded {}*/
+/*.collapsed {}*/
+/*.icon {}*/
 
 .line {
     align-self: center;
@@ -34,13 +39,11 @@ p { margin: 0 }
     border-radius: 3px;
 }
 
-.icon {}
-
 .links {
-    position: relative;
-    top: 30px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 30px;
     margin: 0 20px;
 }
 
@@ -86,31 +89,74 @@ p { margin: 0 }
     }
     .sidebar {
         flex-direction: row;
-        /*align-content: stretch;*/
         order: 2;
     }
     .links {
+        flex: 1;
         flex-direction: row;
         justify-content: space-between;
-        flex: 1;
         top: 0;
         text-align: center;
         margin: 8px;
     }
     .link {
-        margin-bottom: 0;
         flex-direction: column;
         align-items: stretch;
         font-weight: lighter;
+        margin-bottom: 0;
     }
     #hamburger {
-        display: none;
-    }
-    .hidden {
         display: none;
     }
     .link-text {
         display: none;
     }
+}
 
+@media(max-width: 480px) {
+    .container {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .content {
+        order: 1;
+        flex: 1;
+    }
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        order: 2;
+        background: transparent;
+    }
+    .sidebar-contents { border-radius: 12px }
+    .sidebar-contents-selected { background: #3a5336 }
+    .link {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .links {
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        order: 1;
+    }
+    .hidden-mobile {
+        display: none;
+    }
+    .link-text {
+        display: flex;
+    }
+    .line {
+        background: #3a5336;
+    }
+    .line-selected {
+        background: whitesmoke;
+    }
+    #hamburger {
+        display: flex;
+        align-self: flex-end;
+        order: 2;
+    }
 }
