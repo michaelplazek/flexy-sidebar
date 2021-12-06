@@ -25,14 +25,6 @@ p { margin: 0 }
 .expanded {}
 .collapsed {}
 
-#hamburger {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-    cursor: pointer;
-    margin: 24px;
-}
-
 .line {
     align-self: center;
     width: 33px;
@@ -67,14 +59,20 @@ p { margin: 0 }
     font-weight: bold;
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none }
 
 .hovered {
     border-radius: 6px;
     background: goldenrod;
     color: #3a5336;
+}
+
+#hamburger {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    cursor: pointer;
+    margin: 24px;
 }
 
 @media(max-width: 768px) {
@@ -108,12 +106,11 @@ p { margin: 0 }
     #hamburger {
         display: none;
     }
-    /*.hidden {*/
-    /*    display: flex;*/
-    /*}*/
+    .hidden {
+        display: none;
+    }
     .link-text {
-        margin: 4px 0 0 0;
-        font-weight: lighter;
+        display: none;
     }
 
 }
