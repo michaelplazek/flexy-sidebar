@@ -147,6 +147,7 @@ p { margin: 0 }
     }
     .link-text {
         display: flex;
+        text-align: start;
     }
     .line {
         background: #3a5336;
